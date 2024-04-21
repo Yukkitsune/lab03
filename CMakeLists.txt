@@ -7,9 +7,14 @@ option(BUILD_EXAMPLES "Build examples" OFF)
 
 project(print)
 
+add_subdirectory(formatter_ex_lib)
+add_subdirectory(formatter_lib)
+
 add_library(print STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
 add_library(formatter STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter_lib/formatter.cpp)
 add_library(formatter_ex STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib/formatter_ex.cpp)
+
+target_link_libraries(formatter_lib formatter_ex_lib)
 
 target_include_directories(print PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
