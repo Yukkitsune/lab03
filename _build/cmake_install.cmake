@@ -46,6 +46,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/kitsune/Yukkitsune/workspace/tasks/lab03/_build/formatter_ex_lib/cmake_install.cmake")
   include("/home/kitsune/Yukkitsune/workspace/tasks/lab03/_build/formatter_lib/cmake_install.cmake")
+  include("/home/kitsune/Yukkitsune/workspace/tasks/lab03/_build/solver_lib/cmake_install.cmake")
 
 endif()
 

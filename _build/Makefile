@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named hello_world
+
+# Build rule for target.
+hello_world: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world
+.PHONY : hello_world
+
+# fast build rule for target.
+hello_world/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/build
+.PHONY : hello_world/fast
+
+#=============================================================================
+# Target rules for targets named equation
+
+# Build rule for target.
+equation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 equation
+.PHONY : equation
+
+# fast build rule for target.
+equation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equation.dir/build.make CMakeFiles/equation.dir/build
+.PHONY : equation/fast
+
+#=============================================================================
 # Target rules for targets named formatter_ex
 
 # Build rule for target.
@@ -142,6 +168,67 @@ formatter/fast:
 	$(MAKE) $(MAKESILENT) -f formatter_lib/CMakeFiles/formatter.dir/build.make formatter_lib/CMakeFiles/formatter.dir/build
 .PHONY : formatter/fast
 
+#=============================================================================
+# Target rules for targets named solver
+
+# Build rule for target.
+solver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solver
+.PHONY : solver
+
+# fast build rule for target.
+solver/fast:
+	$(MAKE) $(MAKESILENT) -f solver_lib/CMakeFiles/solver.dir/build.make solver_lib/CMakeFiles/solver.dir/build
+.PHONY : solver/fast
+
+hello_world_application/hello_world.o: hello_world_application/hello_world.cpp.o
+.PHONY : hello_world_application/hello_world.o
+
+# target to build an object file
+hello_world_application/hello_world.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world_application/hello_world.cpp.o
+.PHONY : hello_world_application/hello_world.cpp.o
+
+hello_world_application/hello_world.i: hello_world_application/hello_world.cpp.i
+.PHONY : hello_world_application/hello_world.i
+
+# target to preprocess a source file
+hello_world_application/hello_world.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world_application/hello_world.cpp.i
+.PHONY : hello_world_application/hello_world.cpp.i
+
+hello_world_application/hello_world.s: hello_world_application/hello_world.cpp.s
+.PHONY : hello_world_application/hello_world.s
+
+# target to generate assembly for a file
+hello_world_application/hello_world.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world_application/hello_world.cpp.s
+.PHONY : hello_world_application/hello_world.cpp.s
+
+solver_application/equation.o: solver_application/equation.cpp.o
+.PHONY : solver_application/equation.o
+
+# target to build an object file
+solver_application/equation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equation.dir/build.make CMakeFiles/equation.dir/solver_application/equation.cpp.o
+.PHONY : solver_application/equation.cpp.o
+
+solver_application/equation.i: solver_application/equation.cpp.i
+.PHONY : solver_application/equation.i
+
+# target to preprocess a source file
+solver_application/equation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equation.dir/build.make CMakeFiles/equation.dir/solver_application/equation.cpp.i
+.PHONY : solver_application/equation.cpp.i
+
+solver_application/equation.s: solver_application/equation.cpp.s
+.PHONY : solver_application/equation.s
+
+# target to generate assembly for a file
+solver_application/equation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equation.dir/build.make CMakeFiles/equation.dir/solver_application/equation.cpp.s
+.PHONY : solver_application/equation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,8 +237,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... equation"
 	@echo "... formatter"
 	@echo "... formatter_ex"
+	@echo "... hello_world"
+	@echo "... solver"
+	@echo "... hello_world_application/hello_world.o"
+	@echo "... hello_world_application/hello_world.i"
+	@echo "... hello_world_application/hello_world.s"
+	@echo "... solver_application/equation.o"
+	@echo "... solver_application/equation.i"
+	@echo "... solver_application/equation.s"
 .PHONY : help
 
 
